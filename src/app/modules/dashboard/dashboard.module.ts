@@ -5,11 +5,13 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
 import { ComponentsModule, MaterialModule } from '@gdp/shared/modules';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { CardComponent } from './components/card/card.component';
+
+import { NavbarComponent, CardComponent } from '@gdp/dashboard/components';
+
+const components = [NavbarComponent, CardComponent];
 
 @NgModule({
-  declarations: [DashboardComponent, NavbarComponent, CardComponent],
+  declarations: [DashboardComponent, ...components],
   imports: [
     CommonModule,
     DashboardRoutingModule,

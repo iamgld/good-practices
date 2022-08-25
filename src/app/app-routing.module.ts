@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 
+import { AuthGuard } from '@gdp/shared/guards';
+
 const routes: Routes = [
   {
     path: '',
@@ -11,6 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canLoad: [AuthGuard],
     loadChildren: () =>
       import('./modules/dashboard/dashboard.module').then(
         (m) => m.DashboardModule

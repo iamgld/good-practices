@@ -34,3 +34,14 @@ $spacing: (
   xl: 48px,
   xxl: 66px,
 );
+
+@function spacing($space) {
+  @return map-get($spacing, $space);
+}
+@function colors($color) {
+  @return map-get($colors, $color);
+}
+
+.clase {
+  background-color: colors(orange);
+}

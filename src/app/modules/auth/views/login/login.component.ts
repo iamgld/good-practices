@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gdp-login',
@@ -12,14 +13,17 @@ export class LoginComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  constructor() {}
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
+      localStorage.setItem('isLogged', 'true');
+      this._router.navigate(['dashboard']);
     } else {
+      this.form.markAllAsTouched();
     }
   }
 }
