@@ -4,10 +4,17 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
-import { ComponentsModule } from '@gdp/shared/modules';
+import { ComponentsModule, MaterialModule } from '@gdp/shared/modules';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
-  imports: [CommonModule, DashboardRoutingModule, ComponentsModule],
+  declarations: [DashboardComponent, NavbarComponent, CardComponent],
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    ComponentsModule,
+    MaterialModule,
+  ],
 })
 export class DashboardModule {}
