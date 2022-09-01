@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       console.log(this.form.value);
       localStorage.setItem('isLogged', 'true');
-      this._router.navigate(['dashboard']);
+      this._router.navigate(['/dashboard']);
     } else {
       this.form.markAllAsTouched();
     }

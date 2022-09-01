@@ -19,10 +19,6 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
-  {
-    path: '**',
-    component: NotfoundComponent,
-  },
 ];
 
 @NgModule({
